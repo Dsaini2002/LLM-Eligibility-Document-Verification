@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eligibility AI — Intelligent Document Verification</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="CSS/landing.css">
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#" class="brand">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v6c0 5 4 8.5 9 9 5-.5 9-4 9-9V7l-9-5z" stroke="white" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12.5l2 2 4-4.5" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span>Eligibility AI
+        <div class="brand-sub">Document Verification System</div>
+      </span>
+    </a>
+    <nav class="links">
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How it Works</a>
+      <a href="#technology">Technology</a>
+      <a href="#use-cases">Use Cases</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="/frontend/Auth.html" class="btn btn-ghost">Sign In</a>
+      <a href="/frontend/Auth.html" class="btn btn-primary">Sign Up</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <canvas id="neural-canvas"></canvas>
+  <div class="hero-grid-overlay"></div>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="eyebrow"><span class="dot"></span> AI Eligibility &amp; Document Intelligence</div>
+      <h1 class="hero-title">Verify eligibility <span class="grad">in minutes,</span> not weeks.</h1>
+      <p class="hero-desc">An LLM‑powered engine that reads your brochure, extracts eligibility rules, and cross‑verifies applicant documents automatically — with explainable, audit‑ready decisions at enterprise scale.</p>
+      <div class="hero-cta">
+        <a href="auth.html?tab=signup" class="btn btn-primary btn-lg">Get Started Free</a>
+        <a href="#how-it-works" class="btn-secondary-icon">
+          <span class="play-circle">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+          See How It Works
+        </a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item"><b>98.6%</b><span>Verification Accuracy</span></div>
+        <div class="trust-divider"></div>
+        <div class="trust-item"><b>4.2s</b><span>Avg. Document Scan</span></div>
+        <div class="trust-divider"></div>
+        <div class="trust-item"><b>120+</b><span>Rule Templates</span></div>
+      </div>
+    </div>
+
+    <div class="dash-wrap">
+      <div class="float-chip chip-1"><span class="dotgreen"></span> Rules Extracted: 18</div>
+      <div class="dash-card">
+        <div class="dash-topbar">
+          <div class="dash-dots"><span></span><span></span><span></span></div>
+          <div class="dash-title">VERIFICATION WORKSPACE</div>
+        </div>
+
+        <div class="upload-zone">
+          <div class="upload-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 16V4M12 4l-4 4M12 4l4 4" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <p>income_certificate.pdf</p>
+            <span>Uploaded &middot; 240KB &middot; Parsing complete</span>
+          </div>
+        </div>
+
+        <div class="verify-row">
+          <div class="verify-left">
+            <div class="verify-icon icon-ok">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#38BDF8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div><p>Identity Match</p><small>Aadhaar &middot; PAN cross‑check</small></div>
+          </div>
+          <span class="badge badge-verified">VERIFIED</span>
+        </div>
+
+        <div class="verify-row">
+          <div class="verify-left">
+            <div class="verify-icon icon-scan">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#3B7BFF" stroke-width="2"/><path d="M12 8v4l3 2" stroke="#3B7BFF" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div><p>Income Threshold</p><small>Rule: annual income &le; ₹8L</small></div>
+          </div>
+          <span class="badge badge-scanning">SCANNING</span>
+        </div>
+
+        <div class="dash-split">
+          <div class="mini-card">
+            <p>Checklist</p>
+            <div class="checklist">
+              <div class="check-line"><span class="c">✓</span> ID Proof</div>
+              <div class="check-line"><span class="c">✓</span> Income Doc</div>
+              <div class="check-line"><span class="c">✓</span> Address Proof</div>
+            </div>
+          </div>
+          <div class="mini-card">
+            <p>Eligibility Score</p>
+            <svg class="ring" viewBox="0 0 56 56">
+              <circle cx="28" cy="28" r="24" stroke="rgba(255,255,255,0.08)" stroke-width="5" fill="none"/>
+              <circle cx="28" cy="28" r="24" stroke="url(#g1)" stroke-width="5" fill="none" stroke-linecap="round" stroke-dasharray="151" stroke-dashoffset="20" transform="rotate(-90 28 28)"/>
+              <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#38BDF8"/></linearGradient></defs>
+              <text x="28" y="32" text-anchor="middle" font-size="13" fill="#fff" font-family="Poppins" font-weight="700">87%</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="float-chip chip-2"><span class="dotgreen"></span> Report Generated</div>
+    </div>
+  </div>
+</section>
+
+<section id="features" class="features-bg">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="section-eyebrow">Platform Capabilities</div>
+      <h2 class="section-title">Every stage of verification, handled by AI</h2>
+      <p class="section-desc">From unstructured brochures to structured decisions — five connected engines that read, reason, and report.</p>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card fc-5">
+        <div class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 4h9l5 5v11a1 1 0 01-1 1H6a1 1 0 01-1-1V5a1 1 0 011-1z" stroke="#38BDF8" stroke-width="1.6"/><path d="M15 4v5h5" stroke="#38BDF8" stroke-width="1.6"/><path d="M8 13h8M8 17h5" stroke="#38BDF8" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+        <h3>AI Brochure Parsing</h3>
+        <p>Upload any scheme, admission, or policy brochure — the model reads it end‑to‑end and understands intent, not just text.</p>
+        <span class="feature-tag">Language Understanding</span>
+      </div>
+      <div class="feature-card fc-5">
+        <div class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="#38BDF8" stroke-width="1.6"/><path d="M7 9h6M7 13h10M7 17h7" stroke="#38BDF8" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+        <h3>OCR Extraction</h3>
+        <p>High‑fidelity optical character recognition pulls structured fields from scans, photos, and handwritten submissions alike.</p>
+        <span class="feature-tag">Computer Vision</span>
+      </div>
+      <div class="feature-card fc-5">
+        <div class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z" stroke="#38BDF8" stroke-width="1.6"/><path d="M9 12l2 2 4-4" stroke="#38BDF8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Eligibility Engine</h3>
+        <p>Extracted rules become live logic — income caps, age bands, category quotas — evaluated automatically per applicant.</p>
+        <span class="feature-tag">Rule Reasoning</span>
+      </div>
+      <div class="feature-card fc-5">
+        <div class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#38BDF8" stroke-width="1.6"/><path d="M12 7v5l3.5 2" stroke="#38BDF8" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+        <h3>Intelligent Verification</h3>
+        <p>Cross‑references submitted documents against extracted rules and flags mismatches, forgeries, or missing evidence.</p>
+        <span class="feature-tag">Cross‑Document Match</span>
+      </div>
+      <div class="feature-card fc-5">
+        <div class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 19V5a1 1 0 011-1h14a1 1 0 011 1v14l-3-2-3 2-3-2-3 2-4-2z" stroke="#38BDF8" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 9h8M8 13h5" stroke="#38BDF8" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+        <h3>Explainable Reports</h3>
+        <p>Every decision ships with a plain‑language rationale — traceable evidence, not a black box, for full audit confidence.</p>
+        <span class="feature-tag">Audit Ready</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how-it-works">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="section-eyebrow">Process</div>
+      <h2 class="section-title">How it works</h2>
+      <p class="section-desc">One continuous pipeline from raw brochure to a defensible eligibility decision.</p>
+    </div>
+    <div class="steps">
+      <div class="steps-line"></div>
+      <div class="steps-row">
+        <div class="step"><div class="step-num">01</div><h4>Upload Brochure</h4><p>Drop in a PDF, image, or scanned scheme document — any format, any language.</p></div>
+        <div class="step"><div class="step-num">02</div><h4>Extract Rules</h4><p>The LLM identifies eligibility criteria and converts them into structured, testable logic.</p></div>
+        <div class="step"><div class="step-num">03</div><h4>Upload Documents</h4><p>Applicants submit their supporting documents through a secure, guided flow.</p></div>
+        <div class="step"><div class="step-num">04</div><h4>AI Verification</h4><p>OCR and reasoning models validate each document against the extracted rule set.</p></div>
+        <div class="step"><div class="step-num">05</div><h4>Eligibility Report</h4><p>A clear, explainable report is generated — approve, reject, or flag for review.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="technology" class="tech-bg">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">Under the Hood</div>
+      <h2 class="section-title">Built on a modern intelligence stack</h2>
+      <p class="section-desc">A layered architecture designed for accuracy, explainability, and enterprise‑grade security.</p>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-chip"><div class="tech-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l3 6 6 1-4.5 4.5 1 6L12 16l-5.5 3.5 1-6L3 9l6-1z" stroke="currentColor" stroke-width="1.5"/></svg></div><div><b>Large Language Models</b><span>Rule &amp; brochure comprehension</span></div></div>
+      <div class="tech-chip"><div class="tech-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><circle cx="9" cy="12" r="2.5" stroke="currentColor" stroke-width="1.5"/><path d="M14 10h4M14 14h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div><div><b>Computer Vision OCR</b><span>Document field extraction</span></div></div>
+      <div class="tech-chip"><div class="tech-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="6" cy="6" r="2.2" stroke="currentColor" stroke-width="1.5"/><circle cx="18" cy="6" r="2.2" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="18" r="2.2" stroke="currentColor" stroke-width="1.5"/><path d="M7.7 7.2L10.5 16M16.3 7.2L13.5 16M8 6h8" stroke="currentColor" stroke-width="1.4"/></svg></div><div><b>Rule &amp; Logic Engine</b><span>Structured eligibility evaluation</span></div></div>
+      <div class="tech-chip"><div class="tech-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 7l8-4 8 4-8 4-8-4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M4 7v10l8 4 8-4V7" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></div><div><b>Vector Search</b><span>Semantic document matching</span></div></div>
+      <div class="tech-chip"><div class="tech-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 10c0-3.5 3.5-6 8-6s8 2.5 8 6-3.5 6-8 6-8-2.5-8-6z" stroke="currentColor" stroke-width="1.5"/><path d="M4 10v4c0 3.3 3.6 6 8 6s8-2.7 8-6v-4" stroke="currentColor" stroke-width="1.5"/></svg></div><div><b>Cloud‑Native Infra</b><span>Elastic, containerized scale</span></div></div>
+      <div class="tech-chip"><div class="tech-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6l7-3z" stroke="currentColor" stroke-width="1.5"/><path d="M9.5 12l2 2 3-3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div><div><b>Enterprise Security</b><span>Encryption &amp; role‑based access</span></div></div>
+      <div class="tech-chip"><div class="tech-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 20V10M12 10L6 6M12 10l6-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="6" r="2" stroke="currentColor" stroke-width="1.5"/><circle cx="6" cy="6" r="2" stroke="currentColor" stroke-width="1.5"/><circle cx="18" cy="6" r="2" stroke="currentColor" stroke-width="1.5"/></svg></div><div><b>Workflow API</b><span>Integrates with your existing stack</span></div></div>
+      <div class="tech-chip"><div class="tech-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 12h4l2-7 4 14 2-7h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><b>Real‑Time Analytics</b><span>Live pipeline observability</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="use-cases">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="section-eyebrow">Where It Fits</div>
+      <h2 class="section-title">Purpose‑built for verification‑heavy workflows</h2>
+      <p class="section-desc">Any process gated by eligibility rules and supporting documents benefits from automated verification.</p>
+    </div>
+    <div class="usecase-grid">
+      <div class="usecase-card"><div class="usecase-num">01 — EDUCATION</div><h4>Admissions &amp; Scholarships</h4><p>Verify income, category, and merit documents against admission brochures at intake scale.</p></div>
+      <div class="usecase-card"><div class="usecase-num">02 — GOVERNMENT</div><h4>Subsidy &amp; Welfare Programs</h4><p>Automate eligibility checks for public schemes while keeping every decision explainable.</p></div>
+      <div class="usecase-card"><div class="usecase-num">03 — FINANCIAL SERVICES</div><h4>Loan &amp; Credit Eligibility</h4><p>Cross‑verify income proofs and KYC documents against lending policy in seconds.</p></div>
+      <div class="usecase-card"><div class="usecase-num">04 — HEALTHCARE</div><h4>Insurance Claim Review</h4><p>Match claim documentation against policy terms to accelerate approvals.</p></div>
+      <div class="usecase-card"><div class="usecase-num">05 — ENTERPRISE HR</div><h4>Hiring Compliance</h4><p>Validate candidate credentials and eligibility documents before offer rollout.</p></div>
+      <div class="usecase-card"><div class="usecase-num">06 — NON‑PROFIT</div><h4>Grant Verification</h4><p>Confirm applicant eligibility against grant guidelines with a full audit trail.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h3>Bring explainable AI to your eligibility workflow.</h3>
+        <p>Set up your first brochure‑to‑verification pipeline in under an hour — no ML expertise required.</p>
+      </div>
+      <a href="auth.html?tab=signup" class="btn btn-primary btn-lg">Create Free Account</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="brand">
+          <span class="brand-mark">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v6c0 5 4 8.5 9 9 5-.5 9-4 9-9V7l-9-5z" stroke="white" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12.5l2 2 4-4.5" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span>Eligibility AI</span>
+        </a>
+        <p>LLM‑based eligibility &amp; intelligent document verification, built for enterprise‑grade trust and transparency.</p>
+      </div>
+      <div class="footer-col"><h5>Product</h5><a href="#features">Features</a><a href="#how-it-works">How it Works</a><a href="#technology">Technology</a><a href="#use-cases">Use Cases</a></div>
+      <div class="footer-col"><h5>Company</h5><a href="#">About</a><a href="#">Careers</a><a href="#">Blog</a><a href="#">Press</a></div>
+      <div class="footer-col"><h5>Resources</h5><a href="#">Documentation</a><a href="#">API Reference</a><a href="#">Security</a><a href="#">Status</a></div>
+      <div class="footer-col"><h5>Legal</h5><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Compliance</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Eligibility AI. All rights reserved.</span>
+      <div class="socials">
+        <a href="#" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M22 5.9c-.7.3-1.5.6-2.3.7.8-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1a4.1 4.1 0 00-7 3.7A11.6 11.6 0 013 4.9a4.1 4.1 0 001.3 5.4c-.6 0-1.3-.2-1.8-.5v.1c0 2 1.4 3.6 3.3 4a4.1 4.1 0 01-1.9.1 4.1 4.1 0 003.8 2.8A8.2 8.2 0 012 18.4a11.6 11.6 0 006.3 1.8c7.5 0 11.7-6.3 11.7-11.7v-.5c.8-.6 1.5-1.3 2-2.1z" fill="white" opacity="0.85"/></svg></a>
+        <a href="#" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M4 4h4.3l4 5.6L17 4h3l-6.4 8.6L21 20h-4.3l-4.4-6-5 6H4l6.9-8.9L4 4z" fill="white" opacity="0.85"/></svg></a>
+        <a href="#" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="4" stroke="white" stroke-width="1.5" opacity="0.85"/><circle cx="12" cy="12" r="4" stroke="white" stroke-width="1.5" opacity="0.85"/><circle cx="17.2" cy="6.8" r="1" fill="white" opacity="0.85"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/landing.js"></script>
+</body>
+</html>

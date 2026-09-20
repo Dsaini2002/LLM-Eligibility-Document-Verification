@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign In / Sign Up — Eligibility AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+<div class="shell">
+  <!-- LEFT: illustration panel -->
+  <div class="left">
+    <canvas id="auth-canvas"></canvas>
+    <div class="left-grid"></div>
+
+    <div class="left-top">
+      <span class="brand-mark">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v6c0 5 4 8.5 9 9 5-.5 9-4 9-9V7l-9-5z" stroke="white" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12.5l2 2 4-4.5" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <div>
+        <div class="brand-name">Eligibility AI</div>
+        <div class="brand-sub">Document Verification System</div>
+      </div>
+    </div>
+
+    <div class="left-mid">
+      <div class="left-illustration">
+        <div class="orbit-ring ring-1"></div>
+        <div class="orbit-ring ring-2"></div>
+        <div class="doc-chip chip-a"><span class="d"></span> Identity Verified</div>
+        <div class="doc-chip chip-b"><span class="d"></span> Secure Session</div>
+        <div class="lock-core">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none"><rect x="5" y="11" width="14" height="9" rx="2" stroke="#38BDF8" stroke-width="1.7"/><path d="M8 11V8a4 4 0 018 0v3" stroke="#38BDF8" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="15.2" r="1.4" fill="#38BDF8"/></svg>
+        </div>
+      </div>
+      <h2>Secure access to your verification workspace.</h2>
+      <p>Every document, decision, and audit trail is protected end‑to‑end — built for teams that verify eligibility at scale.</p>
+    </div>
+
+    <div class="left-bottom">
+      <div class="stat-mini"><b>256‑bit</b><span>Encryption</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat-mini"><b>SOC 2</b><span>Type II Ready</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat-mini"><b>99.98%</b><span>Uptime SLA</span></div>
+    </div>
+  </div>
+
+  <!-- RIGHT: auth card -->
+  <div class="right">
+    <div class="auth-card">
+      <div class="auth-head">
+        <h1 id="auth-title">Welcome back</h1>
+        <p id="auth-subtitle">Sign in to continue to your verification workspace.</p>
+      </div>
+
+      <div class="tabs">
+        <div class="tab-highlight" id="tab-highlight"></div>
+        <button class="tab-btn active" id="tab-signin" onclick="switchTab('signin')">Sign In</button>
+        <button class="tab-btn" id="tab-signup" onclick="switchTab('signup')">Sign Up</button>
+      </div>
+
+      <div class="status-banner" id="status-banner"></div>
+
+      <!-- SIGN IN PANEL -->
+      <div class="panel active" id="panel-signin">
+        <form onsubmit="return handleSubmit(event, 'signin')">
+          <div class="field">
+            <label for="si-email">Email address</label>
+            <div class="input-wrap">
+              <input type="email" id="si-email" placeholder="you@company.com" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="si-password">Password</label>
+            <div class="input-wrap has-icon">
+              <input type="password" id="si-password" placeholder="Enter your password" required minlength="8">
+              <button type="button" class="input-icon-btn" onclick="togglePw('si-password', this)">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="row-between">
+            <label class="remember"><input type="checkbox"> Remember me</label>
+            <a class="forgot-link">Forgot password?</a>
+          </div>
+          <button type="submit" class="btn-submit">
+            Log In
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+
+        <div class="divider"><span>OR CONTINUE WITH</span></div>
+        <div class="social-row">
+          <button class="social-btn-lg" type="button"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.7-2.4 3.6v3h3.9c2.3-2.1 3.5-5.3 3.5-8.8z"/><path fill="#34A853" d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1.1.7-2.4 1.2-4 1.2-3.1 0-5.7-2.1-6.6-4.9H1.4v3.1C3.4 21.3 7.4 24 12 24z"/><path fill="#FBBC05" d="M5.4 14.4c-.2-.7-.4-1.4-.4-2.4s.1-1.7.4-2.4V6.5H1.4A11.9 11.9 0 000 12c0 1.9.5 3.8 1.4 5.5l4-3.1z"/><path fill="#EA4335" d="M12 4.8c1.7 0 3.3.6 4.5 1.7l3.4-3.4C17.9 1.2 15.2 0 12 0 7.4 0 3.4 2.7 1.4 6.5l4 3.1c.9-2.8 3.5-4.8 6.6-4.8z"/></svg> Google</button>
+          <button class="social-btn-lg" type="button"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M17.5 12.3c0-2.4 2-3.5 2-3.6-1.1-1.6-2.9-1.8-3.5-1.9-1.5-.1-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1.9-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2-.1 1.7-.8 3.1-.8 1.5 0 1.9.8 3.2.8 1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8-.1 0-2.4-1-2.4-3.7z" fill="white" opacity="0.85"/><path d="M14.9 4.9c.7-.8 1.1-1.9 1-3-.9.1-2.1.6-2.7 1.4-.6.7-1.1 1.8-1 2.9 1.1.1 2.1-.5 2.7-1.3z" fill="white" opacity="0.85"/></svg> Apple</button>
+        </div>
+
+        <p class="switch-line">Don't have an account? <a onclick="switchTab('signup')">Sign up for free</a></p>
+      </div>
+
+      <!-- SIGN UP PANEL -->
+      <div class="panel" id="panel-signup">
+        <form onsubmit="return handleSubmit(event, 'signup')">
+          <div class="field">
+            <label for="su-name">Full name</label>
+            <div class="input-wrap">
+              <input type="text" id="su-name" placeholder="Jordan Malhotra" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="su-email">Email address</label>
+            <div class="input-wrap">
+              <input type="email" id="su-email" placeholder="you@company.com" required>
+            </div>
+            <div class="field-hint" id="su-email-hint"></div>
+          </div>
+          <div class="field">
+            <label for="su-password">Password</label>
+            <div class="input-wrap has-icon">
+              <input type="password" id="su-password" placeholder="Create a password" required minlength="8" oninput="checkStrength(this.value)">
+              <button type="button" class="input-icon-btn" onclick="togglePw('su-password', this)">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/></svg>
+              </button>
+            </div>
+            <div class="strength-bar"><div class="strength-fill" id="strength-fill"></div></div>
+            <div class="field-hint" id="strength-hint">Use 8+ characters with a mix of letters &amp; numbers</div>
+          </div>
+          <div class="field">
+            <label for="su-confirm">Confirm password</label>
+            <div class="input-wrap has-icon">
+              <input type="password" id="su-confirm" placeholder="Re‑enter your password" required minlength="8" oninput="checkMatch()">
+              <button type="button" class="input-icon-btn" onclick="togglePw('su-confirm', this)">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/></svg>
+              </button>
+            </div>
+            <div class="field-hint" id="confirm-hint"></div>
+          </div>
+          <div class="field">
+            <label>I am signing up as</label>
+            <div class="role-grid">
+              <div class="role-opt active" data-role="applicant" onclick="selectRole(this)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.4" stroke="currentColor" stroke-width="1.5"/><path d="M5 19c1.2-3.5 4-5 7-5s5.8 1.5 7 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                Applicant
+              </div>
+              <div class="role-opt" data-role="organization" onclick="selectRole(this)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="4" y="9" width="16" height="11" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M8 9V6a4 4 0 018 0v3" stroke="currentColor" stroke-width="1.5"/></svg>
+                Organization
+              </div>
+              <div class="role-opt" data-role="admin" onclick="selectRole(this)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 5-3 8-7 9-4-1-7-4-7-9V6l7-3z" stroke="currentColor" stroke-width="1.5"/></svg>
+                Admin
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn-submit" style="margin-top:6px;">
+            Create Account
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+
+        <div class="divider"><span>OR SIGN UP WITH</span></div>
+        <div class="social-row">
+          <button class="social-btn-lg" type="button"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.7-2.4 3.6v3h3.9c2.3-2.1 3.5-5.3 3.5-8.8z"/><path fill="#34A853" d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1.1.7-2.4 1.2-4 1.2-3.1 0-5.7-2.1-6.6-4.9H1.4v3.1C3.4 21.3 7.4 24 12 24z"/><path fill="#FBBC05" d="M5.4 14.4c-.2-.7-.4-1.4-.4-2.4s.1-1.7.4-2.4V6.5H1.4A11.9 11.9 0 000 12c0 1.9.5 3.8 1.4 5.5l4-3.1z"/><path fill="#EA4335" d="M12 4.8c1.7 0 3.3.6 4.5 1.7l3.4-3.4C17.9 1.2 15.2 0 12 0 7.4 0 3.4 2.7 1.4 6.5l4 3.1c.9-2.8 3.5-4.8 6.6-4.8z"/></svg> Google</button>
+          <button class="social-btn-lg" type="button"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M17.5 12.3c0-2.4 2-3.5 2-3.6-1.1-1.6-2.9-1.8-3.5-1.9-1.5-.1-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1.9-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2-.1 1.7-.8 3.1-.8 1.5 0 1.9.8 3.2.8 1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8-.1 0-2.4-1-2.4-3.7z" fill="white" opacity="0.85"/><path d="M14.9 4.9c.7-.8 1.1-1.9 1-3-.9.1-2.1.6-2.7 1.4-.6.7-1.1 1.8-1 2.9 1.1.1 2.1-.5 2.7-1.3z" fill="white" opacity="0.85"/></svg> Apple</button>
+        </div>
+
+        <p class="switch-line">Already have an account? <a onclick="switchTab('signin')">Sign in</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/auth.js"></script>
+</body>
+</html>
