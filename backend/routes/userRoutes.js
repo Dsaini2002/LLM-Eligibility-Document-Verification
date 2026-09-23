@@ -1,16 +1,18 @@
 const express = require("express");
 const { protect, authorize } = require("../middleware/authMiddleware");
+const { updateProfile } = require("../controllers/userController");
 
 const router = express.Router();
 
 router.get("/profile", protect, (req, res) => {
+    
     res.json({
         success: true,
         message: "Profile accessed successfully",
         user: req.user
     });
 });
-
+router.put("/profile", protect, updateProfile);
 router.get(
     "/applicant-area",
     protect,
